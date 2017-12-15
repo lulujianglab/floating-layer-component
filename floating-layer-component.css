@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei"
+}
+
+.layer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    display: none;
+}
+
+#layer_title {
+    margin: 0;
+    border: 3px solid #000;
+    color: #fff;
+    background-color: #000;
+    padding: 8px 0;
+    text-indent: 5px;
+}
+
+#confirm,
+#cancel {
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    border: none;
+    padding: 5px;
+    background-color: rgba(200, 100, 100, .7);
+    cursor: pointer;
+}
+
+#cancel {
+    right: 10px;
+}
+
+#wrapper {
+    display: none;
+}
+
+#confirm {
+    right: 130px;
+}
+
+#txtarea {
+    background-color: #fff;
+    color: #000;
+    border-top: none;
+    text-indent: 5px;
+    border: 1px solid #000;
+}
