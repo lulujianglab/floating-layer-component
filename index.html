@@ -55,3 +55,53 @@
         <script type="text/javaScript" src="floating-layer-component.js"></script>
     </body>
 </html>
+
+<div id="element">
+    name:<input v-model="name">
+    password:<input v-model="password">
+</div>
+
+<script>
+    var element = document.getElementById('element')
+    // 数据模型
+    var _model = {
+        name: 'zhangshan',
+        password:'123'
+    }
+    
+    var key = 'v-model'
+
+    function mvvm (element,_model) {
+        var model = {}
+        for (let key in _model) {
+            Object.defineProperty(model,key,{
+                get () {return _model[key]},
+                set (val) {
+                    _model.key = val
+                    modelView()
+                }
+            })
+        }
+        modelView()
+        // 视图到模型
+        element.addEventListener('keyup', function(e){
+            var el = e.target
+            if (el.getAttribute(key)) {
+                model[el.getAttribute(key)] = el.value
+            }
+        })
+        // 模型到视图
+        function modelView() {
+            var children = element.children
+            for (var i = 0; i < children.length; i++) {
+                var el = children[i]
+                if (el.getAttribute(key)) {
+                    el.value =model[el.getAttribute(key)]
+                }
+            }
+        }
+        return model
+    }
+
+    var model = mvvm(element,_model)
+</script>
