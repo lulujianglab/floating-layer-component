@@ -132,3 +132,4 @@ document.getElementById("confirm").addEventListener("click", function() {
 mywrapper.addEventListener("click", function() {
     myLayer.hide(mywrapper, mylayer)
 }, false)
+
